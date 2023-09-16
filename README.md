@@ -64,79 +64,82 @@ GitHub Flowは、ソフトウェア開発プロジェクトにおいて作業を
 ## Git操作の基本
 
 初期設定
-   1 git config --global user.name naogmt
-   2 git config --global user.email ＊＊＊＊@gmail.com
-   3 git config --list
+
+   1 git config --global user.name naogmt  　　
+   2 git config --global user.email ＊＊＊＊@gmail.com  
+   3 git config --list  
 
 作業ディレクトリ作成
-   4 cd .\github\
-   5 mkdir sample-play
-   6 cd sample-play
+
+   4 cd .\github\  
+   5 mkdir sample-play  
+   6 cd sample-play  
 
 ローカルリポジトリ作成
+
    7 git init
 
-リモートリポジトリ作成
-（githubの方で行う）
-ギットの承認キー設定
-＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+リモートリポジトリ作成  
+（githubの方で行う）  
+ギットの承認キー設定  
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊  
 
 
-リモートとローカルリポジトリの紐づけ
-   8 git remote add origin https://github.com/ryohei8/sample-v.git
+リモートとローカルリポジトリの紐づけ  
+   8 git remote add origin https://github.com/ryohei8/sample-v.git  
 
-以下だとエラー 
-  9 git pull
+以下だとエラー   
+  9 git pull  
 
-リモートリポジトリとブランチを指定してローカルにプル
-  10 git pull https://github.com/ryohei8/sample-v.git main
-  11 ls
-  12 ls
+リモートリポジトリとブランチを指定してローカルにプル  
+  10 git pull https://github.com/ryohei8/sample-v.git main  
+  11 ls  
+  12 ls  
 
-ローカルリポジトリに変更をステージ
-  13 git add index.html
+ローカルリポジトリに変更をステージ    
+  13 git add index.html  
 
-ローカルに変更をコミット
-  14 git commit -m "[add] index"
-  15 git log
+ローカルに変更をコミット  
+  14 git commit -m "[add] index"  
+  15 git log  
 
-リモートに変更をプッシュする
-  16 git push origin main
+リモートに変更をプッシュする  
+  16 git push origin main  
 
-ブランチを作り移動
-  17 git branch sub1
-  18 git branch sub2
-  19 git branch
-  20 git checkout sub1
-  21 git branch
+ブランチを作り移動  
+  17 git branch sub1  
+  18 git branch sub2  
+  19 git branch  
+  20 git checkout sub1  
+  21 git branch  
+  
+ブランチsub1で変更しコミット  
+  22 git add .\index2.html  
+  23 git commit -m "[add] index2"   
 
-ブランチsub1で変更しコミット
-  22 git add .\index2.html
-  23 git commit -m "[add] index2"
+リモートのブランチsub1も作りプッシュ  
+  24 git push origin sub1  
 
-リモートのブランチsub1も作りプッシュ
-  24 git push origin sub1
+ブランチsub2でリモートのsub1をプル  
+  25 git checkout sub2  
+  26 git branch  
+  27 git pull  
+  28 git pull https://github.com/ryohei8/sample-v.git sub1  
+  29 ls  
 
-ブランチsub2でリモートのsub1をプル
-  25 git checkout sub2
-  26 git branch
-  27 git pull
-  28 git pull https://github.com/ryohei8/sample-v.git sub1
-  29 ls
+メインに戻りsub2をマージする  
+  30 git checkout main  
+  31 git merge sub2  
+  32 ls  
 
-メインに戻りsub2をマージする
-  30 git checkout main
-  31 git merge sub2
-  32 ls
+リモートにプッシュ  
+  33 git push origin main  
 
-リモートにプッシュ
-  33 git push origin main
+ブランチをローカルリモート共に削除  
+  34 git branch -d sub1 sub2  
+  35 git branch  
+  36 git push --delete origin sub1  
 
-ブランチをローカルリモート共に削除
-  34 git branch -d sub1 sub2
-  35 git branch
-  36 git push --delete origin sub1
-
-注意
-・ローカルのブランチ名とリモートのブランチ名を一致させる
-・mainでは作業しないこと
+注意  
+・ローカルのブランチ名とリモートのブランチ名を一致させる  
+・mainでは作業しないこと  
