@@ -64,8 +64,8 @@ GitHub Flowは、ソフトウェア開発プロジェクトにおいて作業を
 ## Git操作の基本
 
 初期設定
-   1 git config --global user.name ryohei8
-   2 git config --global user.email ryohei.chihara.web@gmail.com
+   1 git config --global user.name naogmt
+   2 git config --global user.email ＊＊＊＊@gmail.com
    3 git config --list
 
 作業ディレクトリ作成
